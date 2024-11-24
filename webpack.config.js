@@ -13,6 +13,7 @@ const config = {
       name: 'steem',
       type: 'umd',
     },
+    globalObject: 'this',
   },
   devServer: {
     open: true,
@@ -33,8 +34,28 @@ const config = {
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        vendors: false,
+      },
+    },
+  },
+  experiments: {
+    outputModule: true,
+  },
 };
 
-export default () => {
-  return config;
+const esmConfig = {
+  ...config,
+  output: {
+    ...config.output,
+    filename: 'steem.esm.js',
+    library: {
+      type: 'module',
+    },
+  },
 };
+
+export default [config, esmConfig];

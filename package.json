@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "dist/index.ts",
+  "main": "dist/steem.min.js",
+  "module": "dist/steem.esm.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ety001/test-publish"
