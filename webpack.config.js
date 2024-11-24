@@ -20,7 +20,7 @@ const config = {
     host: 'localhost',
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
   ],
   module: {
     rules: [
