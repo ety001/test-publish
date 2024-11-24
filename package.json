@@ -1,5 +1,6 @@
 {
   "name": "@ety001/test-publish",
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "description": "",
