@@ -1,11 +1,12 @@
 {
   "name": "@ety001/test-publish",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "",
-  "main": "dist/steem.min.js",
-  "module": "dist/steem.esm.js",
+  "main": "dist/test.cjs.js",
+  "module": "dist/test.esm.js",
+  "browser": "dist/test.browser.js", 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ety001/test-publish"
