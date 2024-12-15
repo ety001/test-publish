@@ -2,25 +2,40 @@
   "name": "@ety001/test-publish",
   "private": false,
   "version": "1.0.3",
-  "type": "module",
   "description": "",
-  "main": "dist/test.cjs.js",
+  "main": "dist/test.cjs",
   "module": "dist/test.esm.js",
-  "browser": "dist/test.browser.js", 
+  "browser": "dist/test.browser.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ety001/test-publish"
   },
   "scripts": {
-    "build": "webpack"
+    "dev": "rimraf dist types && cross-env NODE_ENV=development webpack --config ./scripts/webpack.dev.js",
+    "build": "rimraf dist types && cross-env NODE_ENV=production webpack --config ./scripts/webpack.prod.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "author": "ety001",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@vuepress/bundler-vite": "2.0.0-rc.19",
+    "@vuepress/theme-default": "2.0.0-rc.66",
+    "babel-loader": "^9.2.1",
     "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
+    "rimraf": "^6.0.1",
+    "sass-embedded": "^1.83.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.7.2",
+    "vue": "^3.5.13",
+    "vuepress": "2.0.0-rc.19",
     "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^5.1.4",
+    "webpackbar": "^7.0.0"
   }
 }
