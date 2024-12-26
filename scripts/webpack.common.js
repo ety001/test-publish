@@ -1,5 +1,6 @@
-const { resolve, PROJECT_PATH} = require('./constants');
 const WebpackBar = require('webpackbar');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { resolve, PROJECT_PATH} = require('./constants');
 
 module.exports = {
   entry: {
@@ -16,6 +17,10 @@ module.exports = {
     new WebpackBar({
       name: '正在卖力打包中~',
       color: '#fa8c16',
+    }),
+    new HtmlWebpackPlugin({
+      template: resolve(PROJECT_PATH, './public/index.html'),
+      scriptLoading: 'blocking',
     }),
   ],
   module: {

@@ -13,4 +13,11 @@ module.exports = merge(common, {
       openAnalyzer: false,
     }),
   ],
+  devServer: {
+    host: '127.0.0.1', // 指定 host，不设置的话默认是 localhost
+    port: 9003, // 指定端口，默认是8080
+    compress: true, // 是否启用 压缩
+    open: true, // 打开默认浏览器
+    hot: true, // 热更新
+  },
 })
